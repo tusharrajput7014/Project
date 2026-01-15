@@ -307,7 +307,7 @@ const styles = {
   messageSender: {
     fontSize: '11px',
     marginBottom: '6px',
-    opacity: 0.85',
+    opacity: 0.85,
     fontWeight: '700'
   },
   messageText: {
