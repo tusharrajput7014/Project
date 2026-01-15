@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Heart, MessageCircle, Video, LogOut, User, Search, Filter, Bell, UserPlus, Wallet as WalletIcon } from 'lucide-react';
+import { Heart, MessageCircle, Video, LogOut, User, Search, Filter, Bell, UserPlus, Wallet as WalletIcon, MapPin, Clock, Star } from 'lucide-react';
 import { collection, query, where, onSnapshot } from 'firebase/firestore';
 import { db } from '../config/firebase';
 
@@ -235,7 +235,7 @@ const Home = () => {
 const styles = {
   container: {
     minHeight: '100vh',
-    background: '#000000',
+    background: '#f9fafb',
     display: 'flex',
     flexDirection: 'column'
   },
@@ -245,32 +245,33 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '20px'
+    gap: '20px',
+    background: '#f9fafb'
   },
   spinner: {
     width: '48px',
     height: '48px',
-    border: '4px solid #333333',
-    borderTop: '4px solid #ffffff',
+    border: '4px solid #e5e7eb',
+    borderTop: '4px solid #6366f1',
     borderRadius: '50%',
     animation: 'spin 1s linear infinite'
   },
   header: {
-    background: '#0a0a0a',
+    background: 'white',
     padding: '20px 40px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    boxShadow: '0 1px 3px rgba(255, 255, 255, 0.05)',
+    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
     position: 'sticky',
     top: 0,
     zIndex: 100,
-    borderBottom: '1px solid #222222'
+    borderBottom: '1px solid #e5e7eb'
   },
   logo: {
     fontSize: '28px',
     fontWeight: '800',
-    background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 100%)',
+    background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     margin: 0,
@@ -288,26 +289,27 @@ const styles = {
     justifyContent: 'center',
     width: '44px',
     height: '44px',
-    background: '#111111',
-    border: '1px solid #333333',
-    borderRadius: '50%',
+    background: '#f3f4f6',
+    border: 'none',
+    borderRadius: '12px',
     cursor: 'pointer',
-    color: '#ffffff',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+    color: '#374151',
+    transition: 'all 0.2s ease'
   },
   badge: {
     position: 'absolute',
-    top: '-2px',
-    right: '-2px',
+    top: '-4px',
+    right: '-4px',
     background: '#ef4444',
     color: 'white',
-    borderRadius: '12px',
-    padding: '3px 7px',
+    borderRadius: '10px',
+    padding: '2px 6px',
     fontSize: '11px',
     fontWeight: '800',
-    minWidth: '22px',
+    minWidth: '20px',
     textAlign: 'center',
-    border: '2px solid #0a0a0a'
+    border: '2px solid white',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
   },
   iconButton: {
     display: 'flex',
@@ -315,25 +317,26 @@ const styles = {
     justifyContent: 'center',
     width: '44px',
     height: '44px',
-    background: '#111111',
-    border: '1px solid #333333',
-    borderRadius: '50%',
+    background: '#f3f4f6',
+    border: 'none',
+    borderRadius: '12px',
     cursor: 'pointer',
-    color: '#ffffff',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+    color: '#374151',
+    transition: 'all 0.2s ease'
   },
   logoutButton: {
     display: 'flex',
     alignItems: 'center',
     gap: '8px',
-    padding: '12px 24px',
-    background: '#111111',
-    border: '1px solid #333333',
+    padding: '10px 20px',
+    background: '#f3f4f6',
+    border: 'none',
     borderRadius: '10px',
     cursor: 'pointer',
-    fontWeight: '700',
-    color: '#ffffff',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+    fontWeight: '600',
+    fontSize: '14px',
+    color: '#374151',
+    transition: 'all 0.2s ease'
   },
   content: {
     flex: 1,
@@ -348,14 +351,14 @@ const styles = {
   feedTitle: {
     fontSize: '36px',
     fontWeight: '800',
-    color: '#ffffff',
+    color: '#111827',
     margin: '0 0 12px 0',
     letterSpacing: '-0.02em'
   },
   feedSubtitle: {
     fontSize: '18px',
-    color: '#999999',
-    margin: '0 0 32px 0',
+    color: '#6b7280',
+    margin: '0 0 40px 0',
     fontWeight: '400'
   },
   filterSection: {
@@ -371,17 +374,17 @@ const styles = {
     alignItems: 'center',
     gap: '12px',
     padding: '14px 18px',
-    background: '#0a0a0a',
-    border: '2px solid #333333',
+    background: 'white',
+    border: '2px solid #e5e7eb',
     borderRadius: '12px',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+    transition: 'all 0.2s ease'
   },
   searchInput: {
     flex: 1,
     border: 'none',
     outline: 'none',
     fontSize: '15px',
-    color: '#ffffff',
+    color: '#111827',
     fontWeight: '500',
     background: 'transparent'
   },
@@ -390,32 +393,32 @@ const styles = {
     alignItems: 'center',
     gap: '10px',
     padding: '14px 18px',
-    background: '#0a0a0a',
-    border: '2px solid #333333',
+    background: 'white',
+    border: '2px solid #e5e7eb',
     borderRadius: '12px',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+    transition: 'all 0.2s ease'
   },
   filterSelect: {
     border: 'none',
     outline: 'none',
     fontSize: '15px',
     fontWeight: '600',
-    color: '#ffffff',
+    color: '#111827',
     cursor: 'pointer',
     background: 'transparent'
   },
   grid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-    gap: '28px'
+    gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+    gap: '24px'
   },
   card: {
-    background: '#0a0a0a',
-    borderRadius: '16px',
-    padding: '28px',
-    boxShadow: '0 2px 8px rgba(255, 255, 255, 0.05)',
-    border: '1px solid #222222',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    background: 'white',
+    borderRadius: '20px',
+    padding: '32px',
+    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+    border: '1px solid #e5e7eb',
+    transition: 'all 0.3s ease',
     cursor: 'pointer'
   },
   cardHeader: {
@@ -427,16 +430,16 @@ const styles = {
   avatar: {
     width: '64px',
     height: '64px',
-    borderRadius: '50%',
-    background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 100%)',
+    borderRadius: '16px',
+    background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: '#000000',
+    color: 'white',
     fontSize: '28px',
     fontWeight: '800',
     flexShrink: 0,
-    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.25)'
+    boxShadow: '0 4px 12px rgba(99, 102, 241, 0.3)'
   },
   cardInfo: {
     flex: 1,
@@ -445,7 +448,7 @@ const styles = {
   cardName: {
     fontSize: '20px',
     fontWeight: '700',
-    color: '#ffffff',
+    color: '#111827',
     margin: '0 0 6px 0',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
@@ -453,7 +456,7 @@ const styles = {
   },
   cardEmail: {
     fontSize: '13px',
-    color: '#999999',
+    color: '#6b7280',
     margin: 0,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
@@ -469,7 +472,7 @@ const styles = {
   },
   cardBio: {
     fontSize: '15px',
-    color: '#cccccc',
+    color: '#6b7280',
     lineHeight: '1.6',
     marginBottom: '16px',
     display: '-webkit-box',
@@ -485,27 +488,27 @@ const styles = {
   },
   interestTag: {
     padding: '6px 14px',
-    background: '#111111',
-    color: '#ffffff',
+    background: '#f3f4f6',
+    color: '#6366f1',
     borderRadius: '20px',
     fontSize: '12px',
     fontWeight: '700',
-    border: '1px solid #333333'
+    border: '1px solid #e5e7eb'
   },
   cardStats: {
     display: 'flex',
     gap: '20px',
     marginBottom: '20px',
     padding: '16px 0',
-    borderTop: '1px solid #222222',
-    borderBottom: '1px solid #222222'
+    borderTop: '1px solid #e5e7eb',
+    borderBottom: '1px solid #e5e7eb'
   },
   stat: {
     display: 'flex',
     alignItems: 'center',
     gap: '8px',
     fontSize: '14px',
-    color: '#999999',
+    color: '#6b7280',
     fontWeight: '600'
   },
   connectButton: {
@@ -515,34 +518,34 @@ const styles = {
     justifyContent: 'center',
     gap: '10px',
     padding: '14px',
-    background: 'white',
-    color: '#000000',
+    background: '#6366f1',
+    color: 'white',
     border: 'none',
-    borderRadius: '10px',
+    borderRadius: '12px',
     cursor: 'pointer',
     fontWeight: '700',
     fontSize: '15px',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.25)'
+    transition: 'all 0.3s ease',
+    boxShadow: '0 4px 12px rgba(99, 102, 241, 0.3)'
   },
   emptyState: {
     textAlign: 'center',
     padding: '80px 40px',
-    background: '#0a0a0a',
-    borderRadius: '16px',
-    boxShadow: '0 2px 8px rgba(255, 255, 255, 0.05)',
-    border: '1px solid #222222'
+    background: 'white',
+    borderRadius: '20px',
+    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+    border: '1px solid #e5e7eb'
   },
   emptyTitle: {
     fontSize: '24px',
     fontWeight: '800',
-    color: '#ffffff',
+    color: '#111827',
     margin: '20px 0 12px 0',
     letterSpacing: '-0.01em'
   },
   emptyText: {
     fontSize: '16px',
-    color: '#999999',
+    color: '#6b7280',
     margin: 0,
     fontWeight: '500'
   }
