@@ -18,7 +18,7 @@ const LandingPage = () => {
       <section style={styles.hero}>
         <div style={styles.heroContent}>
           <div style={styles.logoContainer}>
-            <Heart size={48} style={{ color: '#667eea' }} />
+            <Heart size={48} style={{ color: 'white' }} />
           </div>
           <h1 style={styles.heroTitle}>
             Find Your Perfect Friend
@@ -161,10 +161,10 @@ const LandingPage = () => {
 const styles = {
   container: {
     minHeight: '100vh',
-    background: '#f7fafc'
+    background: '#000000'
   },
   hero: {
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    background: 'linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #111111 100%)',
     minHeight: '90vh',
     display: 'flex',
     alignItems: 'center',
@@ -179,20 +179,22 @@ const styles = {
     zIndex: 2
   },
   logoContainer: {
-    marginBottom: '20px'
+    marginBottom: '24px'
   },
   heroTitle: {
-    fontSize: '48px',
+    fontSize: '56px',
     fontWeight: '800',
     color: 'white',
-    marginBottom: '20px',
-    lineHeight: '1.2'
+    marginBottom: '24px',
+    lineHeight: '1.1',
+    letterSpacing: '-0.02em'
   },
   heroSubtitle: {
-    fontSize: '18px',
-    color: 'rgba(255, 255, 255, 0.9)',
-    marginBottom: '40px',
-    lineHeight: '1.6'
+    fontSize: '20px',
+    color: 'rgba(255, 255, 255, 0.95)',
+    marginBottom: '48px',
+    lineHeight: '1.7',
+    fontWeight: '400'
   },
   ctaButtons: {
     display: 'flex',
@@ -203,32 +205,32 @@ const styles = {
   primaryButton: {
     display: 'flex',
     alignItems: 'center',
-    gap: '8px',
+    gap: '10px',
     padding: '16px 32px',
     background: 'white',
-    color: '#667eea',
+    color: '#000000',
     border: 'none',
-    borderRadius: '12px',
+    borderRadius: '10px',
     fontSize: '16px',
     fontWeight: '700',
     cursor: 'pointer',
-    boxShadow: '0 4px 14px rgba(0, 0, 0, 0.2)',
-    transition: 'transform 0.2s, box-shadow 0.2s'
+    boxShadow: '0 10px 25px rgba(255, 255, 255, 0.15)',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   secondaryButton: {
     display: 'flex',
     alignItems: 'center',
-    gap: '8px',
+    gap: '10px',
     padding: '16px 32px',
-    background: 'rgba(255, 255, 255, 0.2)',
+    background: 'transparent',
     color: 'white',
-    border: '2px solid white',
-    borderRadius: '12px',
+    border: '2px solid rgba(255, 255, 255, 0.5)',
+    borderRadius: '10px',
     fontSize: '16px',
     fontWeight: '700',
     cursor: 'pointer',
     backdropFilter: 'blur(10px)',
-    transition: 'transform 0.2s, background 0.2s'
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   heroImage: {
     position: 'absolute',
@@ -243,7 +245,7 @@ const styles = {
     background: 'white',
     padding: '24px',
     borderRadius: '16px',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)',
+    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.12)',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -255,7 +257,7 @@ const styles = {
     background: 'white',
     padding: '24px',
     borderRadius: '16px',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)',
+    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.12)',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -268,7 +270,7 @@ const styles = {
     background: 'white',
     padding: '24px',
     borderRadius: '16px',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)',
+    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.12)',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -279,54 +281,57 @@ const styles = {
   cardText: {
     fontSize: '14px',
     fontWeight: '600',
-    color: '#4a5568',
+    color: '#000000',
     margin: 0
   },
   features: {
-    padding: '80px 20px',
+    padding: '100px 20px',
     maxWidth: '1200px',
     margin: '0 auto'
   },
   sectionTitle: {
-    fontSize: '36px',
-    fontWeight: '700',
+    fontSize: '42px',
+    fontWeight: '800',
     textAlign: 'center',
-    color: '#1a202c',
-    marginBottom: '48px'
+    color: '#ffffff',
+    marginBottom: '16px',
+    letterSpacing: '-0.02em'
   },
   featureGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-    gap: '32px'
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gap: '32px',
+    marginTop: '64px'
   },
   featureCard: {
-    background: 'white',
-    padding: '32px',
+    background: '#0a0a0a',
+    padding: '40px 32px',
     borderRadius: '16px',
     textAlign: 'center',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
-    transition: 'transform 0.2s, box-shadow 0.2s'
+    boxShadow: '0 4px 16px rgba(255, 255, 255, 0.05)',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    border: '1px solid #222222'
   },
   featureIcon: {
     fontSize: '48px',
-    marginBottom: '16px'
+    marginBottom: '20px'
   },
   featureTitle: {
-    fontSize: '20px',
+    fontSize: '22px',
     fontWeight: '700',
-    color: '#1a202c',
+    color: '#ffffff',
     marginBottom: '12px'
   },
   featureDescription: {
-    fontSize: '14px',
-    color: '#718096',
-    lineHeight: '1.6'
+    fontSize: '15px',
+    color: '#a0a0a0',
+    lineHeight: '1.7'
   },
   howItWorks: {
-    padding: '80px 20px',
-    background: 'white',
-    borderTop: '1px solid #e2e8f0',
-    borderBottom: '1px solid #e2e8f0'
+    padding: '100px 20px',
+    background: '#0a0a0a',
+    borderTop: '1px solid #222222',
+    borderBottom: '1px solid #222222'
   },
   stepsContainer: {
     maxWidth: '1000px',
@@ -334,66 +339,72 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '24px',
-    flexWrap: 'wrap'
+    gap: '32px',
+    flexWrap: 'wrap',
+    marginTop: '64px'
   },
   step: {
     flex: '1',
-    minWidth: '200px',
+    minWidth: '220px',
     textAlign: 'center'
   },
   stepNumber: {
-    width: '60px',
-    height: '60px',
+    width: '72px',
+    height: '72px',
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    color: 'white',
-    fontSize: '24px',
-    fontWeight: '700',
+    background: 'white',
+    color: '#000000',
+    fontSize: '28px',
+    fontWeight: '800',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: '0 auto 16px'
+    margin: '0 auto 20px',
+    boxShadow: '0 8px 20px rgba(255, 255, 255, 0.25)'
   },
   stepTitle: {
-    fontSize: '18px',
+    fontSize: '20px',
     fontWeight: '700',
-    color: '#1a202c',
-    marginBottom: '8px'
+    color: '#ffffff',
+    marginBottom: '12px'
   },
   stepDescription: {
-    fontSize: '14px',
-    color: '#718096',
-    lineHeight: '1.5'
+    fontSize: '15px',
+    color: '#a0a0a0',
+    lineHeight: '1.6'
   },
   stepArrow: {
     fontSize: '32px',
-    color: '#cbd5e0',
+    color: '#444444',
     fontWeight: '700'
   },
   ctaSection: {
-    padding: '80px 20px',
+    padding: '100px 20px',
     textAlign: 'center',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    color: 'white'
+    background: 'linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #1a1a1a 100%)',
+    color: 'white',
+    borderTop: '1px solid #222222'
   },
   ctaTitle: {
-    fontSize: '36px',
-    fontWeight: '700',
-    marginBottom: '16px'
+    fontSize: '42px',
+    fontWeight: '800',
+    marginBottom: '20px',
+    letterSpacing: '-0.02em'
   },
   ctaText: {
-    fontSize: '18px',
-    marginBottom: '32px',
-    opacity: 0.9
+    fontSize: '20px',
+    marginBottom: '40px',
+    opacity: 0.95,
+    fontWeight: '400'
   },
   footer: {
-    padding: '24px',
+    padding: '32px',
     textAlign: 'center',
-    background: '#1a202c'
+    background: '#000000',
+    borderTop: '1px solid #222222'
   },
   footerText: {
-    color: '#a0aec0',
+    color: '#666666',
     fontSize: '14px',
     margin: 0
   }

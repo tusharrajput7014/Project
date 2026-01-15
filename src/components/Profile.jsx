@@ -380,7 +380,7 @@ const Profile = () => {
 const styles = {
   container: {
     minHeight: '100vh',
-    background: '#f7fafc'
+    background: '#000000'
   },
   loadingContainer: {
     height: '100vh',
@@ -391,18 +391,19 @@ const styles = {
   spinner: {
     width: '40px',
     height: '40px',
-    border: '4px solid #e2e8f0',
-    borderTop: '4px solid #667eea',
+    border: '4px solid #333333',
+    borderTop: '4px solid #ffffff',
     borderRadius: '50%',
     animation: 'spin 1s linear infinite'
   },
   header: {
-    background: 'white',
+    background: '#0a0a0a',
     padding: '16px 24px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+    boxShadow: '0 2px 4px rgba(255, 255, 255, 0.05)',
+    borderBottom: '1px solid #222222'
   },
   backButton: {
     display: 'flex',
@@ -410,24 +411,25 @@ const styles = {
     justifyContent: 'center',
     width: '40px',
     height: '40px',
-    background: '#f7fafc',
-    border: 'none',
+    background: '#111111',
+    border: '1px solid #333333',
     borderRadius: '50%',
     cursor: 'pointer',
-    color: '#4a5568'
+    color: '#ffffff'
   },
   editButton: {
     display: 'flex',
     alignItems: 'center',
     gap: '8px',
     padding: '10px 20px',
-    background: '#667eea',
-    color: 'white',
+    background: 'white',
+    color: '#000000',
     border: 'none',
     borderRadius: '8px',
     cursor: 'pointer',
     fontWeight: '600',
-    fontSize: '14px'
+    fontSize: '14px',
+    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.25)'
   },
   content: {
     padding: '32px',
@@ -435,11 +437,12 @@ const styles = {
     margin: '0 auto'
   },
   profileCard: {
-    background: 'white',
+    background: '#0a0a0a',
     borderRadius: '16px',
     padding: '32px',
-    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-    textAlign: 'center'
+    boxShadow: '0 2px 8px rgba(255, 255, 255, 0.05)',
+    textAlign: 'center',
+    border: '1px solid #222222'
   },
   avatarContainer: {
     position: 'relative',
@@ -450,14 +453,15 @@ const styles = {
     width: '120px',
     height: '120px',
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 100%)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: 'white',
+    color: '#000000',
     fontSize: '48px',
     fontWeight: '700',
-    margin: '0 auto'
+    margin: '0 auto',
+    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.25)'
   },
   onlineBadge: {
     position: 'absolute',
@@ -465,34 +469,35 @@ const styles = {
     right: '8px',
     width: '24px',
     height: '24px',
-    background: '#48bb78',
-    border: '4px solid white',
+    background: '#10b981',
+    border: '4px solid #0a0a0a',
     borderRadius: '50%'
   },
   name: {
     fontSize: '28px',
     fontWeight: '700',
-    color: '#1a202c',
+    color: '#ffffff',
     margin: '8px 0'
   },
   email: {
     fontSize: '14px',
-    color: '#718096',
+    color: '#999999',
     margin: '0 0 12px 0'
   },
   userTypeBadge: {
     display: 'inline-block',
     padding: '6px 16px',
-    background: '#f7fafc',
+    background: '#111111',
     borderRadius: '20px',
     fontSize: '13px',
     fontWeight: '600',
-    color: '#4a5568',
-    marginBottom: '16px'
+    color: '#ffffff',
+    marginBottom: '16px',
+    border: '1px solid #333333'
   },
   bio: {
     fontSize: '15px',
-    color: '#4a5568',
+    color: '#cccccc',
     lineHeight: '1.6',
     margin: '16px 0',
     textAlign: 'center'
@@ -503,7 +508,7 @@ const styles = {
     justifyContent: 'center',
     gap: '8px',
     fontSize: '14px',
-    color: '#718096',
+    color: '#999999',
     margin: '8px 0'
   },
   interestsSection: {
@@ -513,7 +518,7 @@ const styles = {
   sectionTitle: {
     fontSize: '16px',
     fontWeight: '700',
-    color: '#1a202c',
+    color: '#ffffff',
     margin: '0 0 12px 0'
   },
   interestsTags: {
@@ -523,18 +528,20 @@ const styles = {
   },
   interestTag: {
     padding: '6px 12px',
-    background: '#e6fffa',
-    color: '#047857',
+    background: '#111111',
+    color: '#ffffff',
     borderRadius: '16px',
     fontSize: '13px',
-    fontWeight: '500'
+    fontWeight: '500',
+    border: '1px solid #333333'
   },
   ratesSection: {
     marginTop: '24px',
     padding: '20px',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    background: '#111111',
     borderRadius: '12px',
-    color: 'white'
+    color: 'white',
+    border: '1px solid #333333'
   },
   ratesGrid: {
     display: 'grid',
@@ -543,13 +550,14 @@ const styles = {
     marginTop: '12px'
   },
   rateCard: {
-    background: 'rgba(255, 255, 255, 0.2)',
+    background: '#1a1a1a',
     backdropFilter: 'blur(10px)',
     padding: '16px',
     borderRadius: '8px',
     display: 'flex',
     alignItems: 'center',
-    gap: '12px'
+    gap: '12px',
+    border: '1px solid #333333'
   },
   rateLabel: {
     fontSize: '12px',
@@ -572,13 +580,14 @@ const styles = {
     justifyContent: 'center',
     gap: '8px',
     padding: '12px',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    color: 'white',
+    background: 'white',
+    color: '#000000',
     border: 'none',
     borderRadius: '10px',
     cursor: 'pointer',
     fontWeight: '600',
-    fontSize: '15px'
+    fontSize: '15px',
+    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.25)'
   },
   secondaryButton: {
     flex: 1,
@@ -587,9 +596,9 @@ const styles = {
     justifyContent: 'center',
     gap: '8px',
     padding: '12px',
-    background: 'white',
-    color: '#667eea',
-    border: '2px solid #667eea',
+    background: '#111111',
+    color: '#ffffff',
+    border: '2px solid #ffffff',
     borderRadius: '10px',
     cursor: 'pointer',
     fontWeight: '600',
@@ -598,8 +607,8 @@ const styles = {
   disabledButton: {
     flex: 1,
     padding: '12px',
-    background: '#e2e8f0',
-    color: '#a0aec0',
+    background: '#222222',
+    color: '#666666',
     border: 'none',
     borderRadius: '10px',
     fontWeight: '600',
@@ -610,7 +619,7 @@ const styles = {
     textAlign: 'center',
     padding: '32px',
     fontSize: '16px',
-    color: '#718096'
+    color: '#999999'
   },
   modalOverlay: {
     position: 'fixed',
@@ -618,24 +627,25 @@ const styles = {
     left: 0,
     right: 0,
     bottom: 0,
-    background: 'rgba(0, 0, 0, 0.7)',
+    background: 'rgba(0, 0, 0, 0.85)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 1000
   },
   modal: {
-    background: 'white',
+    background: '#0a0a0a',
     borderRadius: '16px',
     padding: '32px',
     maxWidth: '450px',
     width: '90%',
-    boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)'
+    boxShadow: '0 20px 60px rgba(255, 255, 255, 0.15)',
+    border: '1px solid #222222'
   },
   modalTitle: {
     fontSize: '24px',
     fontWeight: '700',
-    color: '#1a202c',
+    color: '#ffffff',
     marginBottom: '20px',
     textAlign: 'center'
   },
@@ -644,7 +654,7 @@ const styles = {
   },
   modalText: {
     fontSize: '16px',
-    color: '#4a5568',
+    color: '#cccccc',
     lineHeight: '1.6',
     marginBottom: '20px',
     textAlign: 'center'
@@ -653,15 +663,16 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     padding: '12px',
-    background: '#f7fafc',
+    background: '#111111',
     borderRadius: '8px',
     marginBottom: '8px',
     fontSize: '15px',
-    color: '#2d3748'
+    color: '#ffffff',
+    border: '1px solid #333333'
   },
   balanceAmount: {
     fontWeight: '700',
-    color: '#667eea'
+    color: '#ffffff'
   },
   modalActions: {
     display: 'flex',
@@ -670,8 +681,8 @@ const styles = {
   cancelButton: {
     flex: 1,
     padding: '12px',
-    background: '#e2e8f0',
-    color: '#4a5568',
+    background: '#222222',
+    color: '#ffffff',
     border: 'none',
     borderRadius: '8px',
     cursor: 'pointer',
@@ -681,13 +692,14 @@ const styles = {
   confirmButton: {
     flex: 1,
     padding: '12px',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    color: 'white',
+    background: 'white',
+    color: '#000000',
     border: 'none',
     borderRadius: '8px',
     cursor: 'pointer',
     fontWeight: '600',
-    fontSize: '15px'
+    fontSize: '15px',
+    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.25)'
   }
 };
 

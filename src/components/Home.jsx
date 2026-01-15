@@ -235,7 +235,7 @@ const Home = () => {
 const styles = {
   container: {
     minHeight: '100vh',
-    background: '#f7fafc',
+    background: '#000000',
     display: 'flex',
     flexDirection: 'column'
   },
@@ -245,34 +245,36 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '16px'
+    gap: '20px'
   },
   spinner: {
-    width: '40px',
-    height: '40px',
-    border: '4px solid #e2e8f0',
-    borderTop: '4px solid #667eea',
+    width: '48px',
+    height: '48px',
+    border: '4px solid #333333',
+    borderTop: '4px solid #ffffff',
     borderRadius: '50%',
     animation: 'spin 1s linear infinite'
   },
   header: {
-    background: 'white',
-    padding: '16px 32px',
+    background: '#0a0a0a',
+    padding: '20px 40px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+    boxShadow: '0 1px 3px rgba(255, 255, 255, 0.05)',
     position: 'sticky',
     top: 0,
-    zIndex: 100
+    zIndex: 100,
+    borderBottom: '1px solid #222222'
   },
   logo: {
-    fontSize: '24px',
-    fontWeight: '700',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    fontSize: '28px',
+    fontWeight: '800',
+    background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 100%)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
-    margin: 0
+    margin: 0,
+    letterSpacing: '-0.02em'
   },
   headerActions: {
     display: 'flex',
@@ -284,58 +286,59 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '40px',
-    height: '40px',
-    background: '#f7fafc',
-    border: 'none',
+    width: '44px',
+    height: '44px',
+    background: '#111111',
+    border: '1px solid #333333',
     borderRadius: '50%',
     cursor: 'pointer',
-    color: '#4a5568',
-    transition: 'all 0.2s'
+    color: '#ffffff',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   badge: {
     position: 'absolute',
-    top: '-4px',
-    right: '-4px',
-    background: '#f56565',
+    top: '-2px',
+    right: '-2px',
+    background: '#ef4444',
     color: 'white',
-    borderRadius: '10px',
-    padding: '2px 6px',
+    borderRadius: '12px',
+    padding: '3px 7px',
     fontSize: '11px',
-    fontWeight: '700',
-    minWidth: '20px',
-    textAlign: 'center'
+    fontWeight: '800',
+    minWidth: '22px',
+    textAlign: 'center',
+    border: '2px solid #0a0a0a'
   },
   iconButton: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '40px',
-    height: '40px',
-    background: '#f7fafc',
-    border: 'none',
+    width: '44px',
+    height: '44px',
+    background: '#111111',
+    border: '1px solid #333333',
     borderRadius: '50%',
     cursor: 'pointer',
-    color: '#4a5568',
-    transition: 'all 0.2s'
+    color: '#ffffff',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   logoutButton: {
     display: 'flex',
     alignItems: 'center',
     gap: '8px',
-    padding: '10px 20px',
-    background: '#f7fafc',
-    border: 'none',
-    borderRadius: '8px',
+    padding: '12px 24px',
+    background: '#111111',
+    border: '1px solid #333333',
+    borderRadius: '10px',
     cursor: 'pointer',
-    fontWeight: '600',
-    color: '#4a5568',
-    transition: 'all 0.2s'
+    fontWeight: '700',
+    color: '#ffffff',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   content: {
     flex: 1,
-    padding: '32px',
-    maxWidth: '1200px',
+    padding: '40px 32px',
+    maxWidth: '1280px',
     margin: '0 auto',
     width: '100%'
   },
@@ -343,127 +346,132 @@ const styles = {
     width: '100%'
   },
   feedTitle: {
-    fontSize: '28px',
-    fontWeight: '700',
-    color: '#1a202c',
-    margin: '0 0 8px 0'
+    fontSize: '36px',
+    fontWeight: '800',
+    color: '#ffffff',
+    margin: '0 0 12px 0',
+    letterSpacing: '-0.02em'
   },
   feedSubtitle: {
-    fontSize: '16px',
-    color: '#718096',
-    margin: '0 0 24px 0'
+    fontSize: '18px',
+    color: '#999999',
+    margin: '0 0 32px 0',
+    fontWeight: '400'
   },
   filterSection: {
     display: 'flex',
     gap: '16px',
-    marginBottom: '24px',
+    marginBottom: '32px',
     flexWrap: 'wrap'
   },
   searchContainer: {
     flex: 1,
-    minWidth: '250px',
+    minWidth: '280px',
     display: 'flex',
     alignItems: 'center',
     gap: '12px',
-    padding: '12px 16px',
-    background: 'white',
-    border: '2px solid #e2e8f0',
-    borderRadius: '12px'
+    padding: '14px 18px',
+    background: '#0a0a0a',
+    border: '2px solid #333333',
+    borderRadius: '12px',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   searchInput: {
     flex: 1,
     border: 'none',
     outline: 'none',
-    fontSize: '14px',
-    color: '#1a202c'
+    fontSize: '15px',
+    color: '#ffffff',
+    fontWeight: '500',
+    background: 'transparent'
   },
   interestFilter: {
     display: 'flex',
     alignItems: 'center',
-    gap: '8px',
-    padding: '12px 16px',
-    background: 'white',
-    border: '2px solid #e2e8f0',
-    borderRadius: '12px'
+    gap: '10px',
+    padding: '14px 18px',
+    background: '#0a0a0a',
+    border: '2px solid #333333',
+    borderRadius: '12px',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   filterSelect: {
     border: 'none',
     outline: 'none',
-    fontSize: '14px',
+    fontSize: '15px',
     fontWeight: '600',
-    color: '#1a202c',
+    color: '#ffffff',
     cursor: 'pointer',
-    background: 'white'
+    background: 'transparent'
   },
   grid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-    gap: '24px'
+    gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+    gap: '28px'
   },
   card: {
-    background: 'white',
+    background: '#0a0a0a',
     borderRadius: '16px',
-    padding: '24px',
-    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-    transition: 'transform 0.2s, box-shadow 0.2s',
-    cursor: 'pointer',
-    ':hover': {
-      transform: 'translateY(-4px)',
-      boxShadow: '0 4px 16px rgba(0,0,0,0.15)'
-    }
+    padding: '28px',
+    boxShadow: '0 2px 8px rgba(255, 255, 255, 0.05)',
+    border: '1px solid #222222',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    cursor: 'pointer'
   },
   cardHeader: {
     display: 'flex',
     alignItems: 'center',
     gap: '16px',
-    marginBottom: '16px'
+    marginBottom: '20px'
   },
   avatar: {
-    width: '56px',
-    height: '56px',
+    width: '64px',
+    height: '64px',
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    background: 'linear-gradient(135deg, #ffffff 0%, #cccccc 100%)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: 'white',
-    fontSize: '24px',
-    fontWeight: '700',
-    flexShrink: 0
+    color: '#000000',
+    fontSize: '28px',
+    fontWeight: '800',
+    flexShrink: 0,
+    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.25)'
   },
   cardInfo: {
     flex: 1,
     minWidth: 0
   },
   cardName: {
-    fontSize: '18px',
+    fontSize: '20px',
     fontWeight: '700',
-    color: '#1a202c',
-    margin: '0 0 4px 0',
+    color: '#ffffff',
+    margin: '0 0 6px 0',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap'
   },
   cardEmail: {
     fontSize: '13px',
-    color: '#718096',
+    color: '#999999',
     margin: 0,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap'
+    whiteSpace: 'nowrap',
+    fontWeight: '500'
   },
   onlineIndicator: {
     fontSize: '12px',
-    color: '#48bb78',
-    fontWeight: '600',
-    marginTop: '4px',
+    color: '#10b981',
+    fontWeight: '700',
+    marginTop: '6px',
     display: 'inline-block'
   },
   cardBio: {
-    fontSize: '14px',
-    color: '#4a5568',
-    lineHeight: '1.5',
-    marginBottom: '12px',
+    fontSize: '15px',
+    color: '#cccccc',
+    lineHeight: '1.6',
+    marginBottom: '16px',
     display: '-webkit-box',
     WebkitLineClamp: 2,
     WebkitBoxOrient: 'vertical',
@@ -472,66 +480,71 @@ const styles = {
   cardInterests: {
     display: 'flex',
     flexWrap: 'wrap',
-    gap: '6px',
-    marginBottom: '12px'
+    gap: '8px',
+    marginBottom: '16px'
   },
   interestTag: {
-    padding: '4px 10px',
-    background: '#e6fffa',
-    color: '#047857',
-    borderRadius: '12px',
-    fontSize: '11px',
-    fontWeight: '600'
+    padding: '6px 14px',
+    background: '#111111',
+    color: '#ffffff',
+    borderRadius: '20px',
+    fontSize: '12px',
+    fontWeight: '700',
+    border: '1px solid #333333'
   },
   cardStats: {
     display: 'flex',
-    gap: '16px',
-    marginBottom: '16px',
-    padding: '12px 0',
-    borderTop: '1px solid #e2e8f0',
-    borderBottom: '1px solid #e2e8f0'
+    gap: '20px',
+    marginBottom: '20px',
+    padding: '16px 0',
+    borderTop: '1px solid #222222',
+    borderBottom: '1px solid #222222'
   },
   stat: {
     display: 'flex',
     alignItems: 'center',
-    gap: '6px',
-    fontSize: '13px',
-    color: '#718096',
-    fontWeight: '500'
+    gap: '8px',
+    fontSize: '14px',
+    color: '#999999',
+    fontWeight: '600'
   },
   connectButton: {
     width: '100%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '8px',
-    padding: '12px',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    color: 'white',
+    gap: '10px',
+    padding: '14px',
+    background: 'white',
+    color: '#000000',
     border: 'none',
     borderRadius: '10px',
     cursor: 'pointer',
-    fontWeight: '600',
+    fontWeight: '700',
     fontSize: '15px',
-    transition: 'transform 0.2s'
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.25)'
   },
   emptyState: {
     textAlign: 'center',
-    padding: '64px 32px',
-    background: 'white',
+    padding: '80px 40px',
+    background: '#0a0a0a',
     borderRadius: '16px',
-    boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+    boxShadow: '0 2px 8px rgba(255, 255, 255, 0.05)',
+    border: '1px solid #222222'
   },
   emptyTitle: {
-    fontSize: '20px',
-    fontWeight: '700',
-    color: '#1a202c',
-    margin: '16px 0 8px 0'
+    fontSize: '24px',
+    fontWeight: '800',
+    color: '#ffffff',
+    margin: '20px 0 12px 0',
+    letterSpacing: '-0.01em'
   },
   emptyText: {
-    fontSize: '14px',
-    color: '#718096',
-    margin: 0
+    fontSize: '16px',
+    color: '#999999',
+    margin: 0,
+    fontWeight: '500'
   }
 };
 

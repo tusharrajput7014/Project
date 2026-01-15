@@ -220,63 +220,68 @@ const styles = {
     height: '100vh',
     display: 'flex',
     flexDirection: 'column',
-    background: '#f7fafc'
+    background: '#000000'
   },
   header: {
-    background: 'white',
-    padding: '16px 24px',
+    background: '#0a0a0a',
+    padding: '20px 32px',
     display: 'flex',
     alignItems: 'center',
-    gap: '16px',
-    borderBottom: '2px solid #e2e8f0',
-    boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    gap: '20px',
+    borderBottom: '1px solid #222222',
+    boxShadow: '0 1px 3px rgba(255, 255, 255, 0.05)'
   },
   backButton: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '40px',
-    height: '40px',
-    background: '#f7fafc',
-    border: 'none',
-    borderRadius: '8px',
+    width: '44px',
+    height: '44px',
+    background: '#111111',
+    border: '1px solid #333333',
+    borderRadius: '10px',
     cursor: 'pointer',
-    color: '#4a5568'
+    color: '#ffffff',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   headerInfo: {
     flex: 1
   },
   headerTitle: {
-    fontSize: '18px',
-    fontWeight: '700',
-    color: '#1a202c',
-    margin: 0
+    fontSize: '20px',
+    fontWeight: '800',
+    color: '#ffffff',
+    margin: 0,
+    letterSpacing: '-0.01em'
   },
   headerSubtitle: {
     fontSize: '13px',
-    color: '#718096',
-    margin: '4px 0 0 0'
+    color: '#999999',
+    margin: '6px 0 0 0',
+    fontWeight: '500'
   },
   videoButton: {
     display: 'flex',
     alignItems: 'center',
     gap: '8px',
-    padding: '10px 20px',
-    background: '#667eea',
-    color: 'white',
+    padding: '12px 24px',
+    background: 'white',
+    color: '#000000',
     border: 'none',
-    borderRadius: '8px',
+    borderRadius: '10px',
     cursor: 'pointer',
-    fontWeight: '600',
-    fontSize: '14px'
+    fontWeight: '700',
+    fontSize: '14px',
+    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.25)',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   messagesContainer: {
     flex: 1,
     overflowY: 'auto',
-    padding: '24px',
+    padding: '32px',
     display: 'flex',
     flexDirection: 'column',
-    gap: '12px'
+    gap: '16px'
   },
   messageWrapper: {
     display: 'flex',
@@ -284,49 +289,50 @@ const styles = {
   },
   messageBubble: {
     maxWidth: '70%',
-    padding: '12px 16px',
-    borderRadius: '12px',
-    boxShadow: '0 1px 2px rgba(0,0,0,0.1)'
+    padding: '14px 18px',
+    borderRadius: '16px',
+    boxShadow: '0 2px 8px rgba(255, 255, 255, 0.05)'
   },
   myMessage: {
-    background: '#667eea',
-    color: 'white',
-    borderBottomRightRadius: '4px'
+    background: 'white',
+    color: '#000000',
+    borderBottomRightRadius: '6px'
   },
   theirMessage: {
-    background: 'white',
-    color: '#1a202c',
-    borderBottomLeftRadius: '4px'
+    background: '#0a0a0a',
+    color: '#ffffff',
+    borderBottomLeftRadius: '6px',
+    border: '1px solid #222222'
   },
   messageSender: {
     fontSize: '11px',
-    marginBottom: '4px',
-    opacity: 0.8,
-    fontWeight: '600'
+    marginBottom: '6px',
+    opacity: 0.85',
+    fontWeight: '700'
   },
   messageText: {
-    fontSize: '14px',
-    lineHeight: '1.5',
+    fontSize: '15px',
+    lineHeight: '1.6',
     wordWrap: 'break-word'
   },
   messageTime: {
     fontSize: '10px',
-    marginTop: '4px',
-    opacity: 0.7,
+    marginTop: '6px',
+    opacity: 0.75,
     display: 'flex',
     alignItems: 'center',
     gap: '4px'
   },
   readStatus: {
     fontSize: '10px',
-    opacity: 0.8
+    opacity: 0.85
   },
   typingIndicator: {
     display: 'flex',
     alignItems: 'center',
-    gap: '8px',
-    padding: '8px',
-    maxWidth: '100px'
+    gap: '10px',
+    padding: '10px',
+    maxWidth: '120px'
   },
   typingDots: {
     display: 'flex',
@@ -334,44 +340,52 @@ const styles = {
   },
   typingText: {
     fontSize: '12px',
-    color: '#718096',
-    fontStyle: 'italic'
+    color: '#64748b',
+    fontStyle: 'italic',
+    fontWeight: '500'
   },
   systemMessage: {
-    padding: '8px 16px',
-    background: '#e2e8f0',
-    color: '#4a5568',
-    borderRadius: '16px',
+    padding: '10px 20px',
+    background: '#111111',
+    color: '#999999',
+    borderRadius: '20px',
     fontSize: '13px',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontWeight: '500',
+    border: '1px solid #222222'
   },
   inputContainer: {
-    background: 'white',
-    padding: '16px 24px',
+    background: '#0a0a0a',
+    padding: '20px 32px',
     display: 'flex',
-    gap: '12px',
-    borderTop: '2px solid #e2e8f0'
+    gap: '16px',
+    borderTop: '1px solid #222222'
   },
   input: {
     flex: 1,
-    padding: '12px 16px',
-    border: '2px solid #e2e8f0',
+    padding: '14px 20px',
+    border: '2px solid #333333',
     borderRadius: '24px',
-    fontSize: '14px',
-    outline: 'none'
+    fontSize: '15px',
+    outline: 'none',
+    color: '#ffffff',
+    fontWeight: '500',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    background: '#111111'
   },
   sendButton: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '48px',
-    height: '48px',
-    background: '#667eea',
-    color: 'white',
+    width: '52px',
+    height: '52px',
+    background: 'white',
+    color: '#000000',
     border: 'none',
     borderRadius: '50%',
     cursor: 'pointer',
-    transition: 'transform 0.2s'
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.25)'
   }
 };
 

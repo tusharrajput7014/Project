@@ -248,28 +248,29 @@ const ProviderDashboard = () => {
 const styles = {
   container: {
     minHeight: '100vh',
-    background: '#f7fafc',
+    background: '#000000',
     padding: '20px'
   },
   header: {
-    background: 'white',
+    background: '#0a0a0a',
     borderRadius: '12px',
     padding: '24px',
     marginBottom: '24px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    boxShadow: '0 1px 3px rgba(255, 255, 255, 0.05)',
+    border: '1px solid #222222'
   },
   headerTitle: {
     fontSize: '24px',
     fontWeight: '700',
-    color: '#1a202c',
+    color: '#ffffff',
     margin: 0
   },
   headerSubtitle: {
     fontSize: '14px',
-    color: '#718096',
+    color: '#999999',
     marginTop: '4px'
   },
   logoutButton: {
@@ -277,9 +278,9 @@ const styles = {
     alignItems: 'center',
     gap: '8px',
     padding: '10px 20px',
-    background: '#fed7d7',
-    color: '#c53030',
-    border: 'none',
+    background: '#220a0a',
+    color: '#ef4444',
+    border: '1px solid #333333',
     borderRadius: '8px',
     cursor: 'pointer',
     fontWeight: '600',
@@ -292,13 +293,14 @@ const styles = {
     marginBottom: '24px'
   },
   statCard: {
-    background: 'white',
+    background: '#0a0a0a',
     borderRadius: '12px',
     padding: '24px',
     display: 'flex',
     alignItems: 'center',
     gap: '16px',
-    boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    boxShadow: '0 1px 3px rgba(255, 255, 255, 0.05)',
+    border: '1px solid #222222'
   },
   statIcon: {
     fontSize: '32px'
@@ -306,20 +308,21 @@ const styles = {
   statValue: {
     fontSize: '24px',
     fontWeight: '700',
-    color: '#1a202c',
+    color: '#ffffff',
     margin: 0
   },
   statLabel: {
     fontSize: '14px',
-    color: '#718096',
+    color: '#999999',
     marginTop: '4px'
   },
   section: {
-    background: 'white',
+    background: '#0a0a0a',
     borderRadius: '12px',
     padding: '24px',
     marginBottom: '24px',
-    boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    boxShadow: '0 1px 3px rgba(255, 255, 255, 0.05)',
+    border: '1px solid #222222'
   },
   sectionHeader: {
     display: 'flex',
@@ -330,7 +333,7 @@ const styles = {
   sectionTitle: {
     fontSize: '20px',
     fontWeight: '700',
-    color: '#1a202c',
+    color: '#ffffff',
     margin: 0
   },
   addButton: {
@@ -338,90 +341,101 @@ const styles = {
     alignItems: 'center',
     gap: '8px',
     padding: '10px 20px',
-    background: '#667eea',
-    color: 'white',
+    background: 'white',
+    color: '#000000',
     border: 'none',
     borderRadius: '8px',
     cursor: 'pointer',
     fontWeight: '600',
-    fontSize: '14px'
+    fontSize: '14px',
+    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.25)'
   },
   form: {
-    background: '#f7fafc',
-    borderRadius: '8px',
-    padding: '20px',
-    marginBottom: '20px'
+    background: '#111111',
+    borderRadius: '12px',
+    padding: '24px',
+    marginBottom: '24px',
+    border: '1px solid #333333'
   },
   formGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-    gap: '12px',
-    marginBottom: '12px'
+    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+    gap: '16px',
+    marginBottom: '16px'
   },
   input: {
-    padding: '12px',
-    border: '2px solid #e2e8f0',
-    borderRadius: '8px',
-    fontSize: '14px',
+    padding: '14px 16px',
+    border: '2px solid #333333',
+    borderRadius: '10px',
+    fontSize: '15px',
     outline: 'none',
     width: '100%',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    color: '#ffffff',
+    fontWeight: '500',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    background: '#1a1a1a'
   },
   formActions: {
     display: 'flex',
     gap: '12px',
-    marginTop: '12px'
+    marginTop: '16px'
   },
   submitButton: {
-    padding: '12px 24px',
-    background: '#667eea',
-    color: 'white',
+    padding: '14px 28px',
+    background: 'white',
+    color: '#000000',
     border: 'none',
-    borderRadius: '8px',
+    borderRadius: '10px',
     cursor: 'pointer',
-    fontWeight: '600',
-    fontSize: '14px'
+    fontWeight: '700',
+    fontSize: '15px',
+    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.25)',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   cancelButton: {
-    padding: '12px 24px',
-    background: '#e2e8f0',
-    color: '#4a5568',
-    border: 'none',
-    borderRadius: '8px',
+    padding: '14px 28px',
+    background: '#222222',
+    color: '#ffffff',
+    border: '1px solid #333333',
+    borderRadius: '10px',
     cursor: 'pointer',
-    fontWeight: '600',
-    fontSize: '14px'
+    fontWeight: '700',
+    fontSize: '15px',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   servicesGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-    gap: '16px'
+    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+    gap: '20px'
   },
   serviceCard: {
-    border: '2px solid #e2e8f0',
-    borderRadius: '8px',
-    padding: '16px'
+    border: '2px solid #333333',
+    borderRadius: '12px',
+    padding: '20px',
+    background: '#111111',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   serviceHeader: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'start',
-    marginBottom: '12px'
+    marginBottom: '16px'
   },
   serviceTitle: {
-    fontSize: '16px',
+    fontSize: '18px',
     fontWeight: '700',
-    color: '#1a202c',
+    color: '#ffffff',
     margin: 0
   },
   servicePrice: {
-    fontSize: '18px',
-    fontWeight: '700',
-    color: '#667eea'
+    fontSize: '20px',
+    fontWeight: '800',
+    color: '#ffffff'
   },
   serviceDescription: {
     fontSize: '14px',
-    color: '#718096',
+    color: '#999999',
     marginBottom: '12px',
     lineHeight: '1.5'
   },
@@ -431,10 +445,11 @@ const styles = {
   },
   serviceMeta: {
     fontSize: '12px',
-    color: '#a0aec0',
-    background: '#f7fafc',
+    color: '#cccccc',
+    background: '#1a1a1a',
     padding: '4px 8px',
-    borderRadius: '4px'
+    borderRadius: '4px',
+    border: '1px solid #333333'
   },
   bookingsList: {
     display: 'flex',
@@ -442,14 +457,15 @@ const styles = {
     gap: '12px'
   },
   bookingCard: {
-    border: '2px solid #e2e8f0',
+    border: '2px solid #333333',
     borderRadius: '8px',
     padding: '16px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     flexWrap: 'wrap',
-    gap: '16px'
+    gap: '16px',
+    background: '#111111'
   },
   bookingInfo: {
     flex: 1,
@@ -458,17 +474,17 @@ const styles = {
   bookingTitle: {
     fontSize: '16px',
     fontWeight: '600',
-    color: '#1a202c',
+    color: '#ffffff',
     margin: '0 0 8px 0'
   },
   bookingDetail: {
     fontSize: '14px',
-    color: '#718096',
+    color: '#999999',
     margin: '4px 0'
   },
   bookingStatus: {
     fontWeight: '600',
-    color: '#667eea'
+    color: '#ffffff'
   },
   bookingActions: {
     display: 'flex',
@@ -477,21 +493,24 @@ const styles = {
   actionButton: {
     display: 'flex',
     alignItems: 'center',
-    gap: '6px',
-    padding: '8px 16px',
-    background: '#667eea',
-    color: 'white',
+    gap: '8px',
+    padding: '10px 20px',
+    background: 'white',
+    color: '#000000',
     border: 'none',
-    borderRadius: '6px',
+    borderRadius: '8px',
     cursor: 'pointer',
     fontSize: '14px',
-    fontWeight: '600'
+    fontWeight: '700',
+    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.25)',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   emptyState: {
     textAlign: 'center',
-    color: '#a0aec0',
-    padding: '40px',
-    fontSize: '14px'
+    color: '#666666',
+    padding: '60px',
+    fontSize: '15px',
+    fontWeight: '500'
   }
 };
 

@@ -44,7 +44,7 @@ const Login = () => {
         </button>
 
         <div style={styles.header}>
-          <Heart size={40} style={{ color: '#667eea' }} />
+          <Heart size={40} style={{ color: '#0f766e' }} />
           <h1 style={styles.title}>
             {isRegistering ? 'Create Account' : 'Welcome Back'}
           </h1>
@@ -130,126 +130,134 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    background: 'linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #111111 100%)',
     padding: '20px'
   },
   card: {
-    background: 'white',
-    borderRadius: '12px',
-    padding: '40px',
+    background: '#0a0a0a',
+    borderRadius: '16px',
+    padding: '48px',
     width: '100%',
-    maxWidth: '500px',
-    boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
-    position: 'relative'
+    maxWidth: '480px',
+    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+    position: 'relative',
+    border: '1px solid #222222'
   },
   backButton: {
     display: 'flex',
     alignItems: 'center',
-    gap: '6px',
-    padding: '8px 12px',
-    background: '#f7fafc',
-    border: 'none',
+    gap: '8px',
+    padding: '10px 16px',
+    background: '#111111',
+    border: '1px solid #333333',
     borderRadius: '8px',
     fontSize: '14px',
     fontWeight: '600',
-    color: '#4a5568',
+    color: '#ffffff',
     cursor: 'pointer',
-    marginBottom: '24px'
+    marginBottom: '32px',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   },
   header: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    gap: '12px',
-    marginBottom: '30px'
+    gap: '16px',
+    marginBottom: '36px'
   },
   title: {
-    fontSize: '28px',
-    fontWeight: '700',
+    fontSize: '32px',
+    fontWeight: '800',
     textAlign: 'center',
     margin: 0,
-    color: '#1a202c'
+    color: '#ffffff',
+    letterSpacing: '-0.02em'
   },
   subtitle: {
-    fontSize: '14px',
-    color: '#718096',
+    fontSize: '15px',
+    color: '#999999',
     textAlign: 'center',
     margin: 0
   },
   userTypeSelector: {
     display: 'flex',
     gap: '12px',
-    marginBottom: '30px'
+    marginBottom: '32px'
   },
   userTypeButton: {
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    gap: '8px',
-    padding: '16px',
-    border: '2px solid #e2e8f0',
-    borderRadius: '8px',
-    background: 'white',
+    gap: '10px',
+    padding: '18px',
+    border: '2px solid #333333',
+    borderRadius: '12px',
+    background: '#0a0a0a',
     cursor: 'pointer',
-    transition: 'all 0.2s',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     fontSize: '14px',
-    fontWeight: '500'
+    fontWeight: '600',
+    color: '#999999'
   },
   userTypeButtonActive: {
-    borderColor: '#667eea',
-    background: '#f7fafc',
-    color: '#667eea'
+    borderColor: '#ffffff',
+    background: '#111111',
+    color: '#ffffff'
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '20px'
+    gap: '24px'
   },
   inputGroup: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '8px'
+    gap: '10px'
   },
   label: {
     fontSize: '14px',
     fontWeight: '600',
-    color: '#4a5568'
+    color: '#ffffff'
   },
   input: {
-    padding: '12px 16px',
-    border: '2px solid #e2e8f0',
-    borderRadius: '8px',
+    padding: '14px 16px',
+    border: '2px solid #333333',
+    borderRadius: '10px',
     fontSize: '15px',
-    transition: 'border-color 0.2s',
-    outline: 'none'
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    outline: 'none',
+    color: '#ffffff',
+    background: '#111111'
   },
   submitButton: {
-    padding: '14px',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    color: 'white',
+    padding: '16px',
+    background: 'white',
+    color: '#000000',
     border: 'none',
-    borderRadius: '8px',
+    borderRadius: '10px',
     fontSize: '16px',
-    fontWeight: '600',
+    fontWeight: '700',
     cursor: 'pointer',
-    marginTop: '10px',
-    transition: 'transform 0.2s'
+    marginTop: '12px',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.25)'
   },
   toggleText: {
     textAlign: 'center',
-    marginTop: '20px',
+    marginTop: '24px',
     fontSize: '14px',
-    color: '#718096'
+    color: '#999999'
   },
   toggleButton: {
-    marginLeft: '5px',
-    color: '#667eea',
+    marginLeft: '6px',
+    color: '#ffffff',
     background: 'none',
     border: 'none',
     cursor: 'pointer',
-    fontWeight: '600',
-    fontSize: '14px'
+    fontWeight: '700',
+    fontSize: '14px',
+    transition: 'color 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
   }
 };
 
